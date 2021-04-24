@@ -15,7 +15,7 @@ This Django aap is for your society management.
 
 <h3>How to run?</h3>
 
-> git clone https://github.com/manthanghasadiya/managesys.git
+> git clone https://github.com/manthanghasadiya/Society-Management.git
 
 > cd managesys
 
