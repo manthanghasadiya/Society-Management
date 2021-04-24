@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <title>Login Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/login.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+<style>
+    .emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;  
+}
+</style>
+<!-- //web font -->
+</head>
+<body>
+<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Your profile</h1>
+		<div class="main-agileinfo" >
+			<div class="agileits-top" >
+				<form action="/homeuser/{{data9.uname}}" method="POST">
+					  {% csrf_token %}
+                      <div class="row" id="loginForm">
+                        <table border="0">
+                          <tr>
+                            <td>Username : </td>
+                            <td style="text-align: center;"><p>{{data9.uname}}</p></td>
+                         </tr>
+                         <tr>
+                            <td>Firstname : </td>
+                            <td style="text-align: center;"><p>{{data9.fname}}</p></td>
+                         </tr>
+                         <tr>
+                            <td>Middlename : </td>
+                            <td style="text-align: center;"><p>{{data9.mname}}</p></td>
+                         </tr>
+                         <tr>
+                            <td>Lastname : </td>
+                            <td style="text-align: center;"><p>{{data9.lname}}</p></td>
+                         </tr>
+                         <tr>
+                            <td>Mobile Number : </td>
+                            <td style="text-align: center;"><p>{{data9.mobile}}</p></td>
+                         </tr>
+                         <tr>
+                            <td>House : </td>
+                            <td style="text-align: center;"><p>{{data9.house}}</p></td>
+                         </tr>
+                         <tr>
+                            <td>Home/Rent : </td>
+                            <td style="text-align: center;"><p>{{data9.Option}}</p></td>
+                         </tr>
+                       </table>
+                    </div>
+					<div class="wthree-text">
+						
+					</div>
+					<input type="submit" value="Home">
+				</form>
+
+			</div>
+		</div>
+		<!-- copyright -->
+		<!-- //copyright -->
+		<ol class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+	<!-- //main -->
+</body>
+
+</html>

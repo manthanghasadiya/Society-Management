@@ -1,0 +1,96 @@
+
+    {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rec.css' %}">
+</head>
+<body>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+   <div class="col-md-12">
+      <div class="invoice">
+         <!-- begin invoice-company -->
+         <div class="invoice-company text-inverse f-w-600">
+            <span class="pull-right hidden-print">
+            <a href="javascript:;" onclick="window.print()" class="btn btn-sm btn-white m-b-10 p-l-5"><i class="fa fa-print t-plus-1 fa-fw fa-lg"></i> Print</a>
+            </span>
+            Thanks for using our app
+         </div>
+         <div class="invoice-header">
+            <div class="invoice-from">
+                <address class="m-t-5 m-b-5">
+                   Name: {{data20.uname}} <br>
+                   House Number: {{data20.house}} <br>
+                   Phone Number: {{data20.mobile}}<br>
+                   House Owner: {% if data20.Option == 'Home' %} ✓ {% else %} ✗ {% endif %}
+                </address>
+             </div>
+            </div>
+         </div>
+         <div class="invoice-content">
+            <div class="table-responsive">
+               <table class="table table-invoice">
+                  <thead>
+                     <tr>
+                        <th></th>
+                        <th class="text-center" width="20%"></th>
+                        <th class="text-center" width="20%"></th>
+                        <th class="text-right" width="20%"></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>
+                           <span class="text-inverse">Payment Month</span><br>
+                        </td>
+                        
+                        {% for da in data21 %}
+                        {% if da.Name == data20.uname %}
+                        <td class="text-center">
+                        {{da.Month}}            
+                        </td>                                               
+                        {% endif %}
+                        {% endfor  %}
+                        
+                     </tr>
+                     <tr>
+                        <td>
+                           <span class="text-inverse">Payment Amount</span><br>
+                        </td>
+                        {% for da in data21 %}
+                        {% if da.Name == data20.uname %}
+                        <td class="text-center">
+                        {{da.Amount}}            
+                        </td>                                               
+                        {% endif %}
+                        {% endfor  %}
+                     </tr>
+                     <tr>
+                        <td>
+                           <span class="text-inverse">Payment Method</span><br>
+                        </td>
+                        {% for da in data21 %}
+                        {% if da.Name == data20.uname %}
+                        <td class="text-center">
+                        {{da.pmethod}}            
+                        </td>                                               
+                        {% endif %}
+                        {% endfor  %}
+                    </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="invoice-footer">
+            <p class="text-center m-b-5 f-w-600" style="font-size: medium;">
+                © 2021 Socmansys Payment Receipt. All rights reserved | Design and Developed with ❤ by Dbms Worriers
+            </p>
+            <a class="btn btn-primary" href="{% url 'homeuser' data20.uname%}" role="button">Home</a></div>
+      </div>
+   </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<head>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <title>Event Details </title>
+    </head>
+    
+    
+    <div class="container">
+        <div class="row">
+            
+            
+            <div class="col-md-12">
+            <h1>Event Details of Socmansys</h1>
+            <div class="table-responsive">
+    
+                    
+                  <table id="mytable" class="table table-bordred table-striped">
+                       
+                       <thead>   
+              
+                         <th>Name of Event</th>
+                         <th>Detail of Event</th>
+                         <th>Date of Event</th>
+                         <th>Time of Event </th>
+                         <th>Fund </th>
+                         <th>Venuse </th>
+                         
+                       </thead>
+        <tbody>
+    
+            
+            {% for d in data10 %}
+            <tr>
+
+                <td>{{d.NEvent}}</td>
+                <td>{{d.DEvent}}</td>
+                <td>{{d.DateE}}</td>
+                <td>{{d.TEvent}}</td>
+                <td>{{d.Fund}}</td>
+                <td>{{d.Venue}}</td>
+                
+                </tr>
+            {% endfor  %}        
+        </tbody>
+            
+    </table>
+    
+    <a class="btn btn-primary" href="{% url 'homeuser' data90.uname%}" role="button">Home</a>
+    
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    

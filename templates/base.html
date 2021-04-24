@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}SOCMANSYS{% endblock title %}</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+     
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: black;
+      position: relative;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  .item.active{
+    height: 550px;
+  }
+
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+
+
+  .img-responsive{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  img:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: blue;
+  }
+
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      
+      <a class="navbar-brand" href="#">Society Management System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        
+        
+      
+        
+        <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+            {% block content %}
+            {% endblock content %}
+        
+
+        <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% block body %}
+{% endblock body %}
+   
+   
+  
+
+<footer class="container-fluid text-center">
+  <p>© 2021 Socmansys. All rights reserved | Design and Developed with ❤ by Dbms Worriers</p>
+</footer>
+
+</body>
+</html>

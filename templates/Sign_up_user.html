@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <title>User Registration</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/login.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Socmansys User Registration Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="/user_reg" method="POST">
+                    {% csrf_token %}
+					<input class="text" type="text" name="uname" placeholder="Username" required="">
+                    <input class="text" type="text" name="fname" placeholder="First Name" required="">
+                    <input class="text" type="text" name="mname" placeholder="Middle Name" required="">
+                    <input class="text" type="text" name="lname" placeholder="Last Name" required="">
+					<input class="text email" type="text" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="mobile" placeholder="Mobile number" required="">
+					<input class="text" type="text" pattern="[A-E]{1}-[1-5]{1}[0]{1}[1-4]{1}"name="house" placeholder="House Number" required="">
+					<select class="text" id="cars" name="Option">
+						<option class="dropdown-content" value="Home">Home</option>
+						<option class="dropdown-content" value="Rent">Rent</option>
+					  </select>				
+					<input id="Password" class="text" type="password" name="password" placeholder="Password" required="" >
+					<input id="Confirm_Password" class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="" >
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="Submit">
+				</form>
+				<p>Already have an Account? <a href="login"> Login Now!</a> </p>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2021 Socmansys Registration Form. All rights reserved | Design and Developed with ❤ by Dbms Worriers </p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+
+</html>

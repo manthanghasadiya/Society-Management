@@ -1,0 +1,59 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <title>maintenance Data </title>
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>maintenance Data of Socmansys</h1>
+            {% csrf_token %}
+            {% comment %} <input type="text" placeholder="Search.." name="search"> {% endcomment %}
+            <select class="text" type="text" name="search" placeholder="---select---">
+                <option class="dropdown-content" value="January">January</option>
+                <option class="dropdown-content" value="February">February</option>
+                <option class="dropdown-content" value="March">March</option>
+                <option class="dropdown-content" value="April">April</option>
+                <option class="dropdown-content" value="May">May</option>
+                <option class="dropdown-content" value="June">June</option>
+                <option class="dropdown-content" value="July">July</option>
+                <option class="dropdown-content" value="August">August</option>
+                <option class="dropdown-content" value="September">September</option>
+                <option class="dropdown-content" value="October">October</option>
+                <option class="dropdown-content" value="November">November</option>
+                <option class="dropdown-content" value="December">December</option>
+                <option class="dropdown-content" value="All">All</option>
+            </select>
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped">
+                    <thead>
+                    <th>Name</th>
+                    <th>Month</th>
+                    <th>Amount</th>
+                    <th>Payment Method</th>
+                    <th>House Number</th>
+                    </thead>
+                    <tbody>
+                    {% for d in data4 %}
+                    <tr>
+                        <td>{{d.Name}}</td>
+                        <td>{{d.Month}}</td>
+                        <td>{{d.Amount}}</td>
+                        <td>{{d.pmethod}}</td>
+                        <td>{{d.house_id}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a class="btn btn-primary" href="homeadmin" role="button">Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    

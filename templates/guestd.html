@@ -1,0 +1,56 @@
+<head>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <title>Guest Data </title>
+    </head>
+    
+    
+    <div class="container">
+        <div class="row">
+            
+            
+            <div class="col-md-12">
+            <h1>Guest Data of Socmansys</h1>
+            <div class="table-responsive">
+    
+                    
+                  <table id="mytable" class="table table-bordred table-striped">
+                       
+                       <thead>   
+              
+                         <th>Name</th>
+                         <th>House Number</th>
+                         <th>Mobile Number</th>
+
+                       </thead>
+        <tbody>
+    
+            
+            {% for d in data11 %}
+            <tr>
+
+                <td>{{d.VName}}</td>
+                <td>{{d.house}}</td>
+                <td>{{d.mobile}}</td>
+                
+                
+                </tr>
+            {% endfor  %}     
+        </tbody>
+            
+    </table>
+    
+    <a class="btn btn-primary" href="homeadmin" role="button">Home</a>
+    
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    

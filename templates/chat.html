@@ -1,0 +1,96 @@
+{% load static %}
+<html>
+    <head>
+      <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
+    </head>
+
+    <body>
+
+{% block body %}
+<nav class="blue lighten-3">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Chat</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="">{{ data16 }}</a></li> 
+          <li><a href="{% url 'login' %}"><i class="material-icons">power_settings_new</i></a></li>
+      </ul>
+    </div>
+</nav>
+    <div class="section" style="height: 80vh">
+    <div class="row">
+        <div class="col s3">
+        <div class="card">
+            <div class="collection">
+                  {% for i in data15 %}
+                   
+                 <a href="{% url 'chat' data16 i.sr   %}" id='user{{ i.sr }}' class="collection-item row"> 
+
+                    <div class="col s8">
+                    <span class="title" id="temp" style="font-weight: bolder">{{ i.sr }}</span>
+                    </div>
+                </a>
+                {% endfor %}  
+            </div>
+        </div>
+        </div>
+        <div class="col s9">
+            <div class="card">
+            <div id="board" class="section grey lighten-3" style="height: 68vh; padding: 5px; overflow-y: scroll">
+                {% block messages %}
+
+                {% endblock %}
+            </div>
+           {% block form %}
+           {% endblock %}
+            </div>
+        </div>
+    </div>
+    </div>
+    {% load staticfiles %}
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script>
+        // For receiving
+        console.log("Welllll");
+        
+        sender_id = "{{ data16 }}";
+        receiver_id = "{{ receiver }}";
+        console.log(document.getElementById("temp").value);
+        console.log(sender_id);
+        console.log(receiver_id);
+
+        //For sending
+        $(function () {
+            scrolltoend();
+            $('#chat-box').on('submit', function (event) {
+                event.preventDefault();
+                console.log("inscroll");
+                
+                var message = $('#message');
+                console.log(message.val());
+                
+                console.log('{{ data16 }}');
+                console.log('{{ receiver }}');
+                send('{{ data16 }}', '{{ receiver }}', message.val());
+                
+
+                message.val('');
+                
+            })
+        })
+    </script>
+{% endblock %}
+</body>
+
+  </html>
